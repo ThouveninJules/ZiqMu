@@ -1,4 +1,29 @@
-<?php
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Cours</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+            <!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Inscription au cours</h2>
+							<p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<h3>Lorem ipsum dolor</h3>
+								
+                                <?php
 
 if(!isset($_REQUEST['cours']))
 {    
@@ -22,3 +47,15 @@ if(!isset($_REQUEST['cours']))
 
 
 ?>
+
+							</div>
+						</section>
+					</article>
+
+
+
+			</div>
+
+
+	</body>
+</html>
