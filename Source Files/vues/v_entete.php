@@ -21,7 +21,7 @@
 
 <html>
 	<head>
-		<title>Generic - Spectral by HTML5 UP</title>
+		<title>Zikmu</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
@@ -29,24 +29,40 @@
 		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+	<?php
+	if(isset($_REQUEST['conn'])){   
+		$conn=$_REQUEST['conn'];
+		$verif = $monPdoMusic->verifCle($conn); 
+	}
+	else{
+		header('Location: ./vues/v_connexion.php');
+	}
 
+	if($conn == '0' || $verif == 0)
+	{
+		header('Location: ./vues/v_connexion.php');
+	}
+	?>
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
 				<!-- Menu -->
 					<header id="header">
-						<h1><a href="index.html">Zikmu</a></h1>
+						<h1><a href="index.php?action=accueil&conn=".$conn>Zikmu</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.php?action=accueil">Accueil</a></li>
-											<li><a href="index.php?action=listeInscription">Voir Inscriptions</a></li>
-											<li><a href="index.php?action=cours">Voir Cours</a></li>
-											<li><a href="./vues/v_connexion.php">Connexion</a></li>
-											<li><a href="#">Log In</a></li>
+											<?php
+											echo
+											"<li><a href=\"index.php?action=accueil&conn=".$conn."\">Accueil</a></li>
+											<li><a href=\"index.php?action=listeInscription&conn=".$conn."\">Voir Inscriptions</a></li>
+											<li><a href=\"index.php?action=cours&conn=".$conn."\">Voir Cours</a></li>
+											<li><a href=\"./vues/v_connexion.php\">Connexion</a></li>
+											"
+											?>
 										</ul>
 									</div>
 								</li>

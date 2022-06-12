@@ -124,7 +124,7 @@ class PdoMusic{
         $sql = "select count(*) as nombre from employe where identifiant = '".$ident."' and mdp = '".$mdp."';";
     
         $empl = array();
-        $verif = 0;
+        $verif = '0';
 
         $rs = self::$monPdo->prepare($sql) ;
 
@@ -136,12 +136,43 @@ class PdoMusic{
         {
             if($nb['nombre'] != "0")
             {
-                $verif = 1;
+                $sql = "select clé from employe where identifiant = '".$ident."'and mdp = '".$mdp."';";
+
+                $cle = array();
+
+                $rs = self::$monPdo->prepare($sql) ;
+
+                $rs->execute() ;
+
+                $cle = $rs->fetchAll();
+
+                foreach($cle AS $uneCle)
+                {
+                    $verif = $uneCle['clé'];
+                }
             }
         }
-
         return $verif;
 
+    }
+
+    public function verifCle(string $cle){
+        $sql = "select count(*) as nombre from employe where clé = '".$cle."';";
+
+        $nbCle = array();
+        $res = 0;
+        $rs = self::$monPdo->prepare($sql);
+        $rs->execute();
+        $nbCle = $rs->fetchAll();
+
+        foreach($nbCle AS $nb)
+        {
+            if($nb['nombre'] != "0")
+            {
+                $res = 1;
+            }
+        }
+        return $res;
     }
     
 

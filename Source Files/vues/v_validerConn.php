@@ -9,12 +9,12 @@
     
     $conn=$monPdoMusic->verifConn($ident, $mdp);
 
-    if($conn==0)
+    if($conn=='0')
     {
-        header('Location: ./v_connexion.php');
+        header('Location: ./v_connexion.php?conn='.$conn);
     }
     else{
-        header('Location: ../index.php?action=accueil&conn=1');
+        header('Location: ../index.php?action=accueil&conn='.$conn);
     }
 
 ?>

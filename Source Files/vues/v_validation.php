@@ -28,6 +28,6 @@
 
     }
 
-    echo "<a href=index.php?action=listeInscription>Voir la liste des inscription</a>";
+    echo "<a href=index.php?action=listeInscription&conn=".$conn.">Voir la liste des inscription</a>";
 
 ?>
