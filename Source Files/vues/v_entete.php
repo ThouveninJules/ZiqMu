@@ -48,23 +48,17 @@
 
 				<!-- Menu -->
 					<header id="header">
-						<?php 
-						echo "<h1><a href=\"index.php?action=accueil&conn=".$conn."\">Zikmu</a></h1>"
-						?>
+						<?= "<h1><a href=\"index.php?action=accueil&conn=".$conn."\">Zikmu</a></h1>"?>
 						<nav id="nav">
 							<ul>
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<?php
-											echo
-											"<li><a href=\"index.php?action=accueil&conn=".$conn."\">Accueil</a></li>
+											<?="<li><a href=\"index.php?action=accueil&conn=".$conn."\">Accueil</a></li>
 											<li><a href=\"index.php?action=listeInscription&conn=".$conn."\">Voir Inscriptions</a></li>
 											<li><a href=\"index.php?action=cours&conn=".$conn."\">Voir Cours</a></li>
-											<li><a href=\"./vues/v_connexion.php\">Connexion</a></li>
-											"
-											?>
+											<li><a href=\"./vues/v_connexion.php\">Connexion</a></li>"?>
 										</ul>
 									</div>
 								</li>
