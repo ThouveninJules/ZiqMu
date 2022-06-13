@@ -1,22 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="ISO-8859-1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/base.css">
-    <title>Document</title>
-</head>
-<body>
-<table class="bandeau">
-    <tr>
-        <td> <a href="index.php?action=accueil">Accueil</a> </td>
-        <td> <a href="index.php?action=listeInscription">Voir Inscritption</a> </td>
-        <td> <a href="index.php?action=cours">Voir cours</a> </td>
-    </tr>
-</table>
-</body> -->
-
 <!DOCTYPE HTML>
 
 <html>
@@ -26,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
         <link rel="stylesheet" href="./assets/css/base.css" />
+		<link rel="icon" type="image/png" href="../images/LogoH.png"/>
 		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">

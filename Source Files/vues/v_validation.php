@@ -8,10 +8,12 @@
     $number=$_POST['numero'];
     
 
-    $sql = "insert into personne values(NULL,'".$nom."', '".$prenom."', ".$tel.", '".$adresse."', '".$mail."');";
+    $sql = "insert into personne values(NULL,'".$nom."', '".$prenom."', ".$tel.", '".$adresse."', '".$mail."', DEFAULT);";
+    echo $sql;
     $monPdoMusic->validerInscription($sql);
 
     $sql = "Select id from personne where tel=".$tel.";";
+    echo $sql;
     $lesComptes = $monPdoMusic->getId($sql);
     foreach($lesComptes as $unCompte){
 
@@ -21,13 +23,15 @@
         echo $compte;
 
         $sql = "insert into adherents values(".$compte.", 1);";
+        echo $sql;
         $monPdoMusic->validerInscription($sql);
 
-        $sql = "insert into inscription values(".$compte.", ".$number.", 0);";
+        $sql = "insert into inscription values(".$compte.", ".$number.", 0, 0, 0);";
+        echo $sql;
         $monPdoMusic->validerInscription($sql);
 
     }
 
-    echo "<a href=index.php?action=listeInscription&conn=".$conn.">Voir la liste des inscription</a>";
+    header('Location: ../index.php?action=listeInscription&conn='.$conn);
 
 ?>

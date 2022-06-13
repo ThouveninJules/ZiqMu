@@ -27,7 +27,7 @@
 										echo "<tr><td><center>L'instrument : ".$uneSeance['instru']."</center></tr></td>";
 										echo "<tr><td><center>Le professeur : ".$uneSeance['nom']." ".$uneSeance['prenom']."</center></tr></td>";
 										echo "<tr><td><center>Nombre de place : ".$uneSeance['nbplace']."</center></tr></td>";
-										echo "<tr><td><center><a href=index.php?action=form&cours=".$numero.">S'inscrire</a></center></tr></td> </table>";
+										echo "<tr><td><center><a href=index.php?action=form&cours=".$numero."&conn=".$conn.">S'inscrire</a></center></tr></td> </table>";
 
 									}	
 

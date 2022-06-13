@@ -29,7 +29,7 @@
 							}
 
 							echo "<br>
-							<form action='index.php?action=validation' method=\"POST\">
+							<form action='index.php?action=validation&conn=".$conn."' method=\"POST\">
 							<input type='hidden' name='numero' value=".$number." required>
 							<input type='text' placeholder='Entrez votre nom' name='nom' required><br><br>
 							<input type='text' placeholder='Entrez votre prénom' name='prenom' required><br><br>
