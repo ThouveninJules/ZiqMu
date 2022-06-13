@@ -23,10 +23,10 @@
 								
                                 <?php
 
-                                echo "<br><br><table><tr><th><center>Nom</center></th><th><center>Prénom</center></th><th><center>Cours</center></th><th><center>PDF</center></th><th><center>Supprimer</center></th></tr>";
+                                echo "<br><br><table><tr><th><center>Nom</center></th><th><center>Prénom</center></th><th><center>Cours</center></th><th><center>PDF</center></th></tr>";
                                 foreach($lesInscr as $uneInscr){
 
-                                    echo "<tr><td><center>".$uneInscr['nom']."</center></td><td><center>".$uneInscr['prenom']."</center></td><td><center>".$uneInscr['id']."</center></td><td><center><a><img class=\"img_pdf\" src=./images/pdf.png></a></center></td><td><center><a><img class=\"img_suppr\" src=./images/suppr.png></a></center></td></tr>";
+                                    echo "<tr><td><center>".$uneInscr['nom']."</center></td><td><center>".$uneInscr['prenom']."</center></td><td><center>".$uneInscr['id']."</center></td><td><center><a href=\"pdf/pdf.php?Adh=".$uneInscr['adh']."&Cours=".$uneInscr['id']."\" target='blank_'><img class=\"img_pdf\" src=./images/pdf.png></a></center></td></tr>";
 
                                 }
                                 echo "</table>";

@@ -1,11 +1,16 @@
 <?php
 class PdoMusic{   		
-    private static $serveur='mysql:host=localhost';
-    private static $bdd='dbname=projetmusique';   		
-    private static $user='root' ;    		
-    private static $mdp='' ;	
+    // private static $serveur='mysql:host=localhost';
+    // private static $bdd='dbname=projetmusique';   		
+    // private static $user='root' ;    		
+    // private static $mdp='' ;	
+    private static $serveur='mysql:host=bufsuabjtzikmu.mysql.db';
+    private static $bdd='dbname=bufsuabjtzikmu';   		
+    private static $user='bufsuabjtzikmu' ;    		
+    private static $mdp='fhZid7392Vdse8' ;
     private static $monPdo;
 	private static $monPdoMusic=null;
+
 			
 	private function __construct(){
     	PdoMusic::$monPdo = new PDO(PdoMusic::$serveur.';'.PdoMusic::$bdd, PdoMusic::$user, PdoMusic::$mdp); 
@@ -100,7 +105,7 @@ class PdoMusic{
         
         $inscr = array();
 
-        $req = "Select p.nom, p.prenom, i.idCours as id from personne as p inner join inscription as i on i.idAdherent = p.id;";
+        $req = "Select p.nom, p.prenom, i.idCours as id, i.idAdherent as adh from personne as p inner join inscription as i on i.idAdherent = p.id;";
 
         $rs = self::$monPdo->prepare($req) ;
 
@@ -117,6 +122,25 @@ class PdoMusic{
         }
 
 
+    }
+
+    public function getUneInscription(int $idAdh, int $idCours)
+    {
+        try {
+            $inscr = array();
+            $req = "Select p.nom as nom, p.prenom as prenom, i.idCours as id, it.nom as instrument, prof.nom as profNom, prof.prenom as profPrenom, c.jourheure as date from personne as p inner join inscription as i on i.idAdherent = p.id inner join cours as c on c.id = i.idCours inner join personne prof on c.idProfesseur = prof.id inner join instrument it on it.id = c.idInstrument where p.id = ".$idAdh." and c.id = ".$idCours.";";
+            $rs = self::$monPdo->prepare($req) ;
+
+            $rs->execute() ;
+
+            $inscr = $rs->fetchAll();
+            return $inscr;
+        }
+        catch (PDOException $e) {
+        
+            echo 'Échec lors de la connexion : ' . $e->getMessage();
+
+        }
     }
 
     public function verifConn(string $ident, string $mdp){

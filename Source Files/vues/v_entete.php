@@ -48,7 +48,9 @@
 
 				<!-- Menu -->
 					<header id="header">
-						<h1><a href="index.php?action=accueil&conn=".$conn>Zikmu</a></h1>
+						<?php 
+						echo "<h1><a href=\"index.php?action=accueil&conn=".$conn."\">Zikmu</a></h1>"
+						?>
 						<nav id="nav">
 							<ul>
 								<li class="special">
